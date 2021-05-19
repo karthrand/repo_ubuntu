@@ -1,0 +1,32 @@
+############# config ##################
+#
+set base_path    /var/www/html/ubunturepo
+#
+set mirror_path  $base_path/mirror
+set skel_path    $base_path/skel
+set var_path     $base_path/var
+set cleanscript $var_path/clean.sh
+set defaultarch  <running host architecture>
+set postmirror_script $var_path/postmirror.sh
+set run_postmirror 0
+set nthreads     20
+set _tilde 0
+#
+############# end config ##############
+# Ubuntu 16.04
+deb-amd64 http://archive.ubuntu.com/ubuntu xenial main restricted universe multiverse
+deb-amd64 http://archive.ubuntu.com/ubuntu xenial-security main restricted universe multiverse
+deb-amd64 http://archive.ubuntu.com/ubuntu xenial-updates main restricted universe multiverse
+
+#deb-src http://archive.ubuntu.com/ubuntu xenial main restricted universe multiverse
+#deb-src http://archive.ubuntu.com/ubuntu xenial-security main restricted universe multiverse
+#deb-src http://archive.ubuntu.com/ubuntu xenial-updates main restricted universe multiverse
+
+
+# Nginx
+deb-amd64 http://nginx.org/packages/mainline/ubuntu xenial nginx
+#deb-src http://nginx.org/packages/mainline/ubuntu xenial nginx
+
+# clean
+clean http://archive.ubuntu.com/ubuntu
+clean http://nginx.org/packages/mainline/ubuntu
